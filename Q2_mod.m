@@ -17,12 +17,6 @@ X = [var1, var2];
 % Ref: https://www.mathworks.com/help/stats/clustering-using-gaussian-mixture-models.html
 
 rng(3);
-legends{1} = {'1','2','3'};
-legends{2} = {'1','2','3','4'};
-legends{3} = {'1','2','3','4','5'};
-legends{4} = {'1','2','3','4','5','6'};
-legends{5} = {'1','2','3','4','5','6','7'};
-legends{6} = {'1','2','3','4','5','6','7','8'};
 
 sigma_all = {};
 sigma_sum = [];
@@ -56,8 +50,8 @@ for k=3:8
         uistack(h2,'bottom');
     end
     plot(gmfit.mu(:,1),gmfit.mu(:,2),'kx','LineWidth',2,'MarkerSize',10)
-    title(sprintf('k = %d\nSum of Sigma = %0.3f',k,sum(gmfit.Sigma, 'all')),'FontSize',8)
-    legend(h1,legends{k-2})
+    title(sprintf('k = %d\nSum of Sigma = %0.3f',k,sum(gmfit.Sigma, 'all')),'FontSize',8)    
+    legend('hide')
     hold off
     sgtitle(sprintf('Sigma is fill\nSharedCovariance = false'),'FontSize',8)
 end
